@@ -15,13 +15,13 @@ import SlMenuItem from '@shoelace-style/shoelace/dist/react/menu-item';
 
 function App() {
 
-  const [open, setOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
   
   return (
     <div className="App">
       <header className="App-header">
         
-        <SlDialog label="Dialog" open={open} onSlAfterHide={() => setOpen(false)}>
+        <SlDialog label="Dialog" open={dialogOpen}>
         <div
           style={{
             height: '100vh',
@@ -34,7 +34,7 @@ function App() {
           <p style={{height: '300px'}}>Pushing to the bottom</p>
 
           <SlDropdown>
-            <SlButton slot="trigger" caret>
+            <SlButton slot="trigger" class="test-debug" caret>
               Dropdown
             </SlButton>
             <SlMenu>
@@ -60,12 +60,12 @@ function App() {
 
         </div>
 
-        <SlButton slot="footer" variant="primary" onClick={() => setOpen(false)}>
+        <SlButton slot="footer" variant="primary" onClick={() => setDialogOpen(false)}>
           Close
         </SlButton>
       </SlDialog>
 
-      <SlButton onClick={() => setOpen(true)}>Open Dialog</SlButton>
+      <SlButton onClick={() => setDialogOpen(true)}>Open Dialog</SlButton>
 
 
       </header>
